@@ -1,0 +1,211 @@
+/* 
+ * Fox Versus MSNBC
+ * author: Poof
+ * 
+ * Layout from Dynamic Drive 
+ * http://www.dynamicdrive.com/style/layouts/item/css-fixed-layout-31-fixed-fixed-fixed/
+ */
+
+body{
+	margin:0;
+	padding:0;
+	text-align: center;
+	background: black;
+	color: white;
+}
+#maincontainer{
+	width: 1100px; /*Width of main container*/
+	margin: 0 auto; /*Center container on page*/
+}
+
+
+/* HEADER */
+#topsection{
+	height: 50px; /*Height of top section*/
+}
+#topsection h1{
+	margin: 0;
+	padding-top: 15px;
+}
+
+
+/* COMMON GROUND */
+#middlewrapper{
+	float: left;
+	width: 100%;
+}
+#commongroundcolumn{
+	margin: 0 300px 0 300px; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+}
+#boxingRing {
+	height: 150px;
+	width: 150px;
+	margin-top: 50px;
+}
+#commonGround {
+	width: 140px;
+	height: 17px;
+	background:url('../images/icons.png') -50px 0px;
+	margin-top: 50px;
+}
+#commonWords {
+	border: 1px solid red;
+	height: 300px;
+	margin: 5px 70px;
+	overflow: hidden;
+}
+#commonWords .titleBox {
+    background-color: black; 
+}
+#leftArrow {
+	width: 10px;
+	height: 10px;
+	background:url('../images/icons.png') -56px 16px;
+}
+#rightArrow {
+	width: 10px;
+	height: 10px;
+	background:url('../images/icons.png') -66px 16px;
+}
+#lastUpdate {
+	margin-top: 50px;
+}
+
+
+/* MSNBC */
+#msnbccolumn{
+	float: left;
+	width: 300px; /*Width of left column in pixel*/
+	margin-left: -1100px; /*Set margin to that of -(MainContainerWidth)*/
+}
+#msnbcLogo {
+	height: 100px;
+	width: 100px;
+}
+
+
+/* FOX */
+#foxcolumn{
+	float: left;
+	width: 300px; /*Width of right column*/
+	margin-left: -300px; /*Set left margin to -(RightColumnWidth)*/
+}
+#foxLogo {
+	height: 100px;
+	width: 100px;
+}
+
+
+/* FOOTER */
+#footer {
+	clear: left;
+	width: 100%;
+	background: black;
+	color: #FFF;
+	text-align: center;
+	padding: 4px 0;
+}
+#footer h6 {
+	color: red;
+}
+#footer img {
+	margin: -10px 20px;
+}
+.innertube{
+	margin: 0px; 
+}
+
+
+
+/* JQUERY-TOOLS: TABS */
+ul.tabs {
+	list-style: none;
+	margin: 30px 0px 0px 0px !important;
+	width: 100%;
+	padding: 0;
+}
+ul.tabs li {
+	float: left;
+}
+ul.tabs a {
+	position: relative;
+	color: white;
+	text-decoration: none;
+	background-color: #544949;
+	display: inline;
+	border-radius: 5px;
+	padding: 8px;
+}
+ul.tabs a:active {
+    outline:none;
+}
+ul.tabs a:hover{
+	color: black;
+}
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+    cursor:default !important;
+    color: white !important;
+    background-color: #B7B6B6;
+}
+/* JQUERY-TOOLS: PANES */
+div.panes > div {
+    background-color: #B7B6B6;
+    border-radius: 5px 5px 5px 5px;
+    height: 400px;
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+    padding-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+h3, h4, h5 {
+	display: inline;
+}
+
+#msnbccolumn h3, #msnbccolumn h4,
+#foxcolumn h3, #foxcolumn h4 {
+	color: black;
+}
+.titleBox {
+	border-bottom: 1px solid black;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 2;
+	background-color: #B7B6B6; 
+}
+#commonWords .titleBox{
+	border-bottom: 1px solid white !important;
+}
+.titleMiddle{
+	padding: 0px 70px;
+}
+#commonWords .titleMiddle{
+	padding: 0px 95px;
+}
+.wordBox {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	position: relative;
+}
+.rank {
+	float: left;
+	width: 20px;
+	margin-left: 15px;
+	margin-right: 10px;
+}
+.word {
+	margin-left: auto;
+	margin-right: auto;
+}
+.count {
+	float: right;
+	width: 40px;
+	margin-right: 10px;
+}
+
