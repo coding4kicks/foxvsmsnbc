@@ -95,7 +95,6 @@ class Spider:
         counter = 0
         while counter < self.MAX:
 
-
             ## get the next link
             link = self.link_queue.pop(0)
 
@@ -130,7 +129,8 @@ class Spider:
 
                 ## increment counter
                 counter = counter + 1
-              
+                print(counter)
+                
                 ## add to link dictionary
                 self.dic_links[self.doc_name] = self.site_url
 
