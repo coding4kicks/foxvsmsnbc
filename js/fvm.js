@@ -5,7 +5,7 @@ $(function () {
     var
         // variables for backbone and views
         Word, Update, Stoplist, Ranking, RankingView, UpdateView, StoplistView,
-        fox_view, msnbc_view, common_view, update_view, stoplist_view,
+        fox_view, msnbc_view, common_view, update_view, msnbc_stoplist_view, fox_stoplist_view,
 
         // variables for scroller
         counter     =   0,
@@ -111,20 +111,41 @@ $(function () {
             this.model.url = 'rankings/' + this.el.id + ".json";  // set collections url to id of container
             this.model.fetch({success: this.render });
         },
-	    
-	    // Map each word into the template and append. 
+	     
         render: function () {
             var temp = this.template(this.model.toJSON());
             $(this.el).append(temp);
             return this;
         }
 	});
+	
+	StoplistView = Backbone.View.extend({
+       
+       // Template for each wordBox
+        template: _.template("<h4><%= stoplist %></h4>"),
+        
+        initialize: function () {
+            _.bindAll(this, 'render'); // all functions that use this
+            // Create and fetch the model
+            this.model = new Stoplist();
+            this.model.url = 'rankings/' + this.el.id + ".json";  // set collections url to id of container
+            this.model.fetch({success: this.render });
+        },
+        
+        render: function () {
+            var temp = this.template(this.model.toJSON());
+            $(this.el).append(temp);
+            return this;
+        }
+    });
 
 	// Create the views
 	fox_view = new RankingView({ el: $('#foxWordPane') });
 	msnbc_view = new RankingView({ el: $('#msnbcWordPane') });
 	common_view = new RankingView({ el: $('#commonWords') });
 	update_view = new UpdateView({ el: $('#lastUpdate') });
+	msnbc_stoplist_view = new StoplistView({ el: $('#stopWordsMSNBC') });
+	fox_stoplist_view = new StoplistView({ el: $('#stopWordsFox') });
 
     // Scroll Function
 	setInterval(function () {
