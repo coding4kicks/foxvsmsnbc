@@ -4,8 +4,8 @@ $(function () {
 
     var
         // variables for backbone and views
-        Word, Ranking, RankingView,
-        fox_view, msnbc_view, common_view,
+        Word, Update, Stoplist, Ranking, RankingView, UpdateView, StoplistView,
+        fox_view, msnbc_view, common_view, update_view, stoplist_view,
 
         // variables for scroller
         counter     =   0,
@@ -23,7 +23,8 @@ $(function () {
 	 * BACKBONE 
 	 */
 
-	////////////// MODEL //////////////
+	////////////// MODELS //////////////
+	
 	// Each word with its rank and count constitutes the model
 	Word = Backbone.Model.extend({
 		defaults: {
@@ -32,8 +33,23 @@ $(function () {
 			count: 0
 		}
 	});
+	
+	// The update section pulls in last update
+	Update = Backbone.Model.extend({
+	    defaults: {
+            stoplist: "No current data"
+        }
+    });
+    
+    // The stop word lists pull in current stoplists
+    Stoplist = Backbone.Model.extend({
+        defaults: {
+            stoplist: "No current data"
+        }
+    });
 
-	///////////// COLLECTION ///////////////////
+	///////////// COLLECTIONS ///////////////////
+	
 	// All the words for a site make up a ranking, or the common words with count equal to rank 2.
     Ranking = Backbone.Collection.extend({
 		model: Word,
@@ -43,7 +59,8 @@ $(function () {
 		}
 	});
 
-	//////////// VIEW //////////////////////
+	//////////// VIEWS //////////////////////
+	
 	// A Ranking has its own view
 	RankingView = Backbone.View.extend({
 
@@ -81,11 +98,33 @@ $(function () {
 			return true;
 		}
 	});
+	
+	UpdateView = Backbone.View.extend({
+	   
+	   // Template for each wordBox
+        template: _.template("<span class='update'><%= update %></span>"),
+        
+        initialize: function () {
+            _.bindAll(this, 'render'); // all functions that use this
+            // Create and fetch the model
+            this.model = new Update();
+            this.model.url = 'rankings/' + this.el.id + ".json";  // set collections url to id of container
+            this.model.fetch({success: this.render });
+        },
+	    
+	    // Map each word into the template and append. 
+        render: function () {
+            var temp = this.template(this.model.toJSON());
+            $(this.el).append(temp);
+            return this;
+        }
+	});
 
 	// Create the views
 	fox_view = new RankingView({ el: $('#foxWordPane') });
 	msnbc_view = new RankingView({ el: $('#msnbcWordPane') });
 	common_view = new RankingView({ el: $('#commonWords') });
+	update_view = new UpdateView({ el: $('#lastUpdate') });
 
     // Scroll Function
 	setInterval(function () {
