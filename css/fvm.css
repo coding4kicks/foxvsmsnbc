@@ -156,13 +156,20 @@ body{
  
 /* close button positioned on upper right corner */
 .simple_overlay .close {
-    background-image:url(/media/img/overlay/close.png);
+    background-image:url('../images/close.png');
     position:absolute;
     right:-15px;
     top:-15px;
     cursor:pointer;
     height:35px;
     width:35px;
+}
+#about-overlay h3 {
+    display: block;
+}
+#about-overlay h4 {
+    display: block;
+    text-align: left;
 }
 
 /* JQUERY-TOOLS: TABS */
