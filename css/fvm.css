@@ -45,6 +45,11 @@ body{
 #about {
     display: block;
     margin: 5px;
+    color: white;
+}
+#about:hover {
+    color: blue;
+    cursor: pointer;
 }
 #commonGround {
 	width: 140px;
@@ -86,6 +91,15 @@ body{
 	height: 100px;
 	width: 100px;
 }
+.stopword {
+    display: block;
+    margin: 5px;
+    color: white !important;
+}
+.stopword:hover {
+    color: red !important;
+    cursor: pointer;
+}
 
 
 /* FOX */
@@ -119,7 +133,37 @@ body{
 	margin: 0px; 
 }
 
-
+/* OVERLAYS */
+.simple_overlay {
+ 
+    /* must be initially hidden */
+    display:none;
+ 
+    /* place overlay on top of other elements */
+    z-index:10000;
+ 
+    /* styling */
+    background-color:#333;
+ 
+    width:675px;
+    min-height:200px;
+    border:1px solid #666;
+ 
+    /* CSS3 styling for latest browsers */
+    -moz-box-shadow:0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px #000;
+}
+ 
+/* close button positioned on upper right corner */
+.simple_overlay .close {
+    background-image:url(/media/img/overlay/close.png);
+    position:absolute;
+    right:-15px;
+    top:-15px;
+    cursor:pointer;
+    height:35px;
+    width:35px;
+}
 
 /* JQUERY-TOOLS: TABS */
 ul.tabs {
@@ -151,6 +195,7 @@ ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
     color: white !important;
     background-color: #B7B6B6;
 }
+
 /* JQUERY-TOOLS: PANES */
 div.panes > div {
     background-color: #B7B6B6;
