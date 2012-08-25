@@ -42,11 +42,15 @@ body{
 	width: 150px;
 	margin-top: 50px;
 }
+#about {
+    display: block;
+    margin: 5px;
+}
 #commonGround {
 	width: 140px;
 	height: 17px;
 	background:url('../images/icons.png') -50px 0px;
-	margin-top: 50px;
+	margin-top: 20px;
 }
 #commonWords {
 	border: 1px solid red;
