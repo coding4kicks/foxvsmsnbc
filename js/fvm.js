@@ -15,6 +15,9 @@ $(function () {
 	// Bind the tabs using jQuery Tools
 	$("#msnbccolumn ul.tabs").tabs("#msnbccolumn div.panes > div");
 	$("#foxcolumn ul.tabs").tabs("#foxcolumn div.panes > div");
+	
+	// Bind the overlays using jQuery Tools
+	$("a[rel]").overlay();
 
 	/*
 	 * BACKBONE 
