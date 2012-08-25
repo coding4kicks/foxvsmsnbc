@@ -164,10 +164,10 @@ body{
     height:35px;
     width:35px;
 }
-#about-overlay h3 {
+.simple_overlay h3 {
     display: block;
 }
-#about-overlay h4 {
+.simple_overlay h4 {
     display: block;
     text-align: left;
 }

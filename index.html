@@ -28,7 +28,7 @@
 					<img id="boxingRing" src="images/boxing-ring.png" alt="boxing ring" />
 					<div style="clear:both"></div>
 					
-					<a rel="#about-overlay"><h4 id="about">about</h4></a>
+					<a rel="#aboutOverlay"><h4 id="about">about</h4></a>
 					
 					<img id="commonGround" src="images/soTransparent.png" alt="Common Ground" />
 					
@@ -128,7 +128,7 @@
 					</div>
 				</div>
 
-            <a rel="#sw-msnbc-overlay"><h4 class="stopword">stopwords</h4></a>
+            <a rel="#stopWordsMSNBC"><h4 class="stopword">stopwords</h4></a>
             
 			</div>
 		</div>
@@ -184,7 +184,7 @@
 					</div>
 				</div> 
 				
-				<a rel="#sw-fox-overlay"><h4 class="stopword">stopwords</h4></a>
+				<a rel="#stopWordsFox"><h4 class="stopword">stopwords</h4></a>
 				
 			</div>
 		</div>
@@ -206,14 +206,19 @@
 </div>
  
 <!-- Overlay Section -->
-<div class="simple_overlay" id="about-overlay" >
+<div class="simple_overlay" id="aboutOverlay" >
     <h3>Are we defined by the words we use?</h3>
     <h4>We download all the articles from the website's of Fox and MSNBC (or NBC - same difference).</h4>
     <h4>We then count what are the most used words overall - "Top Words", and which words are most used together in a sentence - "Top Combos".</h4>
+    <h4>We remove stop words, because you don't really care about how many times they use "the", do you?</h4>
     <h4>Is Fox more conservative or MSNBC more liberal, let the bout begin.</h4>
 </div>
-<div class="simple_overlay" id="sw-msnbc-overlay" ></div>
-<div class="simple_overlay" id="sw-fox-overlay" ></div>
+<div class="simple_overlay" id="stopWordsMSNBC" >
+    <h3>Stop words for MSNBC:</h3>
+</div>
+<div class="simple_overlay" id="stopWordsFox" >
+    <h3>Stop words for Fox:</h3>
+</div>
 
   <!-- Could retrieve some libraries minified through a cdn -->
   <script src="js/jquery-1.7.2.js"></script>
