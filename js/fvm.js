@@ -158,7 +158,7 @@ $(function () {
 		if (eightCommon) { box3 = $("#commonWords .titleBox + div"); }
 
 		// on every 20 counts move the top margin 1 pixel up
-		if (counter % 20 === 0) {
+		if (counter % 15 === 0) {
 		    box1.css("margin-top", count + "px");
 		    box2.css("margin-top", count + "px");
 		    if (eightCommon) {box3.css("margin-top", count + "px"); }
@@ -168,7 +168,7 @@ $(function () {
 		counter = counter + 1;
 
         // at 650 reset counters, delete word, and add to end
-		if (counter === 650) {
+		if (counter === 450) {
 
 			counter = 0;
 			count = 10;
