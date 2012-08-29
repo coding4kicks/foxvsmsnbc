@@ -1,4 +1,11 @@
-# ignore vim files
-##################
-*~
+# Ignore content and link files
+*.cnt
+*.lk
 *.swp
+*~
+*.pyc
+*.DS_Store
+.metadata/*
+.project
+.pydevproject
+
