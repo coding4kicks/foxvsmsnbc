@@ -139,16 +139,16 @@ $(function () {
         }
     });
 
-	// Create the views
-	fox_view = new RankingView({ el: $('#foxWordPane') });
-	msnbc_view = new RankingView({ el: $('#msnbcWordPane') });
-	common_view = new RankingView({ el: $('#commonWords') });
-	update_view = new UpdateView({ el: $('#lastUpdate') });
-	msnbc_stoplist_view = new StoplistView({ el: $('#stopWordsMSNBC') });
-	fox_stoplist_view = new StoplistView({ el: $('#stopWordsFox') });
+    // Create the views
+    fox_view = new RankingView({ el: $('#foxWordPane') });
+    msnbc_view = new RankingView({ el: $('#msnbcWordPane') });
+    common_view = new RankingView({ el: $('#commonWords') });
+    update_view = new UpdateView({ el: $('#lastUpdate') });
+    msnbc_stoplist_view = new StoplistView({ el: $('#stopWordsMSNBC') });
+    fox_stoplist_view = new StoplistView({ el: $('#stopWordsFox') });
 
-    // Scroll Function
-	setInterval(function () {
+      // Scroll Function
+    setInterval(function () {
 
 		// Select first word from each pane
 		var box1, box2, box3,
